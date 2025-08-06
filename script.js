@@ -118,37 +118,52 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("article-lightbox");
   const lightboxImg = lightbox.querySelector("img");
   const lightboxClose = lightbox.querySelector(".lightbox-close");
+  const lightboxSourceLink = lightbox.querySelector(".lightbox-source"); // Dapatkan referensi link sumber
   const galleryItems = document.querySelectorAll(".gallery-item img");
 
   console.log("Lightbox element:", lightbox);
   console.log("Lightbox close button:", lightboxClose);
+  console.log("Lightbox source link:", lightboxSourceLink); // Tambah log
   console.log("Gallery items found:", galleryItems.length);
 
   galleryItems.forEach((img) => {
     img.addEventListener("click", function () {
       console.log("Image clicked, opening lightbox.");
       lightbox.classList.add("active");
-      lightboxImg.src = this.src;
-      lightboxImg.alt = this.alt;
-      document.body.style.overflow = "hidden";
+      lightboxImg.src = this.src; // Set source to clicked image
+      lightboxImg.alt = this.alt; // Set alt text
+
+      // NEW: Set the source link's href to the image's src and show it
+      if (lightboxSourceLink) { // Pastikan elemen ada
+        lightboxSourceLink.href = this.src; // Gunakan src gambar sebagai link sumber
+        lightboxSourceLink.style.display = 'block'; // Tampilkan link
+      }
+
+      document.body.style.overflow = "hidden"; // Prevent scrolling body when lightbox is open
     });
   });
 
-  if (lightboxClose) { // Check if close button exists before adding listener
+  if (lightboxClose) {
     lightboxClose.addEventListener("click", () => {
       console.log("Lightbox close button clicked.");
       lightbox.classList.remove("active");
-      document.body.style.overflow = "";
+      if (lightboxSourceLink) { // Sembunyikan link saat menutup
+        lightboxSourceLink.style.display = 'none';
+      }
+      document.body.style.overflow = ""; // Restore body scrolling
     });
   } else {
     console.error("Error: Lightbox close button not found!");
   }
 
-  if (lightbox) { // Check if lightbox exists before adding listener
+  if (lightbox) {
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) {
         console.log("Clicked outside lightbox image, closing.");
         lightbox.classList.remove("active");
+        if (lightboxSourceLink) { // Sembunyikan link saat menutup
+          lightboxSourceLink.style.display = 'none';
+        }
         document.body.style.overflow = "";
       }
     });

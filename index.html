@@ -22,15 +22,32 @@
     <!-- Google Fonts untuk font Noto Serif SC (Opsional) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Google Fonts for Playfair Display (for strong English titles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap"
+    rel="stylesheet"
+    />
+
+    <!-- Google Fonts for Noto Serif TC (for Traditional Chinese characters, serif style) -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+    />
+
     <!-- Font Awesome untuk ikon (misalnya, untuk tombol berbagi, tombol toggle TOC) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
   </head>
   <body>
     <!-- HEADER SECTION -->
@@ -42,13 +59,8 @@
         </div>
 
         <div class="header-logo-area">
-          <!-- Placeholder untuk gambar logo Tiongkok Anda -->
-          <!-- Setelah Anda memiliki gambar (misalnya, images/chinese-logo.png), ganti div di bawah: -->
-          <!-- <img src="images/chinese-logo.png" alt="Chinese Logo" class="chinese-logo-image"> -->
-          <div class="chinese-logo-box">
-            <span class="chinese-logo-text">年仟伍</span>
-          </div>
-          <div class="chinese-heritage-text">Chinese-Heritage</div>
+          <!-- Ganti 'path/to/your/kaligrafi-logo.png' dengan lokasi file gambar kaligrafi Anda -->
+          <img src="images/chinese-heritage-logo.png" alt="Chinese Heritage Calligraphy Logo" class="main-site-logo">
         </div>
 
         <div class="header-top-right">
@@ -89,7 +101,7 @@
       <main>
         <article>
           <h1 id="intro" class="fade-in-section">
-            Remembering the Generalissimo: The Legacy of Chiang Kai-shek
+            Remembering the Generalissimo:<br>The Legacy of Chiang Kai-shek
           </h1>
           <h2 id="memorial-day-tradition" class="fade-in-section">
             Memorial Day and the <em>Qīngmíng</em> Tradition
@@ -305,33 +317,37 @@
           </p>
 
           <!-- IMAGE GALLERY SECTION -->
-          <section class="image-gallery fade-in-section">
+         <section class="image-gallery fade-in-section">
             <h2 id="gallery">Historical Photo Gallery</h2>
             <div class="gallery-item">
               <img
-                src="https://via.placeholder.com/400x300/e0e0e0/333333?text=Chiang+Kai-shek+1"
-                alt="Chiang Kai-shek 1"
+                src="images/03.jpg"
+                alt="Chiang Kai-shek"
               />
+              <p class="gallery-caption">Chiang Kai-shek leading Northern Expedition</p>
             </div>
             <div class="gallery-item">
               <img
-                src="https://via.placeholder.com/400x300/d0d0d0/444444?text=Northern+Expedition"
-                alt="Northern Expedition"
+                src="images/b.jpg"
+                alt="Chinese Troops at Lugou Bridge (Marco Polo Bridge Incident)"
               />
+              <p class="gallery-caption">Chinese Troops at Lugou Bridge (Marco Polo Bridge Incident)</p>
             </div>
             <div class="gallery-item">
               <img
-                src="https://via.placeholder.com/400x300/c0c0c0/555555?text=Sino-Japanese+War"
-                alt="Sino-Japanese War"
+                src="images/a.jpg"
+                alt="Japanese Soldiers among Chinese Refugees during Sino-Japanese War"
               />
+              <p class="gallery-caption">Japanese Soldiers among Chinese Refugees during Sino-Japanese War</p>
             </div>
             <div class="gallery-item">
               <img
-                src="https://via.placeholder.com/400x300/b0b0b0/666666?text=ROC+in+Taiwan"
-                alt="ROC in Taiwan"
+                src="images/d.jpg"
+                alt="Chiang Kai-shek and Song Meiling in Taipei"
               />
+              <p class="gallery-caption">Chiang Kai-shek and Song Meiling in Taipei</p>
             </div>
-            <!-- Add more images as needed. Ganti URL placeholder dengan path gambar Anda (misal: "images/nama_gambar.jpg") -->
+            <!-- Anda bisa menambahkan lebih banyak gambar dan caption sesuai kebutuhan. -->
           </section>
 
           <h2 id="modern-commemoration" class="fade-in-section">
@@ -437,7 +453,7 @@
             <div class="share-buttons">
               <a
                 href="https://www.facebook.com/sharer/sharer.php?u=YOUR_ARTICLE_URL_HERE"
-                target="_blank"
+                target="_blank" 
                 class="facebook"
                 aria-label="Share on Facebook"
                 ><i class="fab fa-facebook-f"></i
@@ -464,8 +480,7 @@
               ></a>
             </div>
             <p style="font-size: 0.9em; font-weight: normal; color: #888;">
-              (Remember to replace "YOUR_ARTICLE_URL_HERE" with the actual URL of
-              your page!)
+              (chinese-heritage.com)
             </p>
           </section>
         </article>
@@ -474,15 +489,61 @@
     <!-- END MAIN CONTENT AND SIDEBAR WRAPPER -->
 
     <!-- LIGHTBOX HTML (Hidden by default) -->
+   <!-- LIGHTBOX HTML (Hidden by default) -->
     <div class="lightbox" id="article-lightbox">
       <span class="lightbox-close">&times;</span>
       <img src="" alt="Lightbox Image" />
+      <!-- Tambahan: Link ke sumber gambar -->
+      <a href="#" target="_blank" class="lightbox-source" rel="noopener noreferrer">View Source</a>
     </div>
 
     <!-- BACK TO TOP BUTTON -->
     <button id="back-to-top" title="Back to Top">
       <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- LOCATION SECTION -->
+    <section class="location-section fade-in-section">
+      <div class="location-content-wrapper">
+        <div class="location-details">
+          <div class="location-header-line"></div>
+          <h2>2025 Exhibition</h2>
+          <!-- Teks sesuai permintaan Anda -->
+          <p><i class="fas fa-map-marker-alt"></i> Jiantan Youth Activity Center</p>
+          <p><i class="fas fa-box-open"></i> Cultural Relics Exhibition of Heroes' Land</p> <!-- Mengganti ikon telepon dengan ikon box/pameran -->
+          <p><i class="fas fa-calendar-alt"></i> Commemorating the 87th Anniversary of the July 7th Incident</p> <!-- Mengganti ikon amplop dengan ikon kalender/event -->
+          <a href="#" class="more-button">More</a>
+        </div>
+        <div class="location-visuals-container">
+          <div class="location-map">
+            <!-- Google Maps iframe untuk Jiantan Youth Activity Center (URL sudah diperbaiki) -->
+            <iframe
+              src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.7160311526573!2d121.5218082403043!3d25.077612136625625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a94d33056def%3A0x1585b7cef9ee3790!2sChientan%20Youth%20Activity%20Center!5e0!3m2!1sen!2stw!4v1754503643561!5m2!1sen!2stw" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="location-side-images">
+            <!-- Dua gambar horizontal di samping peta -->
+            <!-- Ganti URL placeholder ini dengan gambar asli pameran Anda -->
+            <img src="images/aki.jpg" alt="Exhibit View 1" class="side-image">
+            <img src="images/aku.jpg" alt="Exhibit View 2" class="side-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-copyright">
+          伍仟年 Chinese-Heritage. Copyright ©  All Rights Reserved.
+        </div>
+      </div>
+    </footer>
 
     <!-- Link ke file JavaScript eksternal Anda. Tempatkan di akhir body untuk kinerja yang lebih baik. -->
     <script src="script.js"></script>
