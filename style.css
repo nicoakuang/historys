@@ -43,7 +43,8 @@ body {
   right: 0;
   width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px 0; /* Kurangi padding saat sticky */
+  padding: 5px 0; /* <--- PERBAIKAN: Kurangi padding vertikal keseluruhan header saat sticky */
+  /* padding: 10px 0; adalah yang sebelumnya */
 }
 .header-top {
   display: flex;
@@ -56,13 +57,19 @@ body {
   display: none; /* Sembunyikan nav saat sticky pada desktop, akan ditangani oleh JS */
 }
 
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  margin-bottom: 30px; /* Space between top and nav */
+.header-container.sticky .header-top {
+  margin-bottom: 0; /* Pastikan tidak ada margin bawah dari header-top */
+  padding-top: 5px; /* <--- PERBAIKAN: Kurangi padding di dalam header-top */
+  padding-bottom: 5px; /* <--- PERBAIKAN: Kurangi padding di dalam header-top */
 }
+
+.header-container.sticky .header-logo-area {
+    margin-bottom: 0; /* <--- PERBAIKAN: Hapus margin di bawah logo saat sticky */
+}
+.header-container.sticky .main-site-logo {
+    max-width: 200px; /* <--- PERBAIKAN: Perkecil logo gambar saat sticky */
+}
+
 
 .header-top-left,
 .header-top-right {
